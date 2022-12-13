@@ -49,8 +49,6 @@ class EmployeeTest {
                 new Employee("Самохвалова Наталия", 30), new Employee("Битова Анастасия", 26),
                 new Employee("Игнатьев Игорь", 25), new Employee("Кириллов Валентин", 24),
                 new Employee("Шершуков Виктор", 24)));
-        System.out.println(resultEmployees);
-        System.out.println(Employee.getEmployeeSet(employees));
         assertEquals(List.copyOf(resultEmployees), List.copyOf(Employee.getEmployeeSet(employees)));
     }
 }

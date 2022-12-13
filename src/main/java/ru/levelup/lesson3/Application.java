@@ -5,6 +5,5 @@ public class Application {
 
         Sorter.printWords("привет, привет как дела?  не знаю! этого НЕ достаточно ");
 
-
-        }
+    }
 }

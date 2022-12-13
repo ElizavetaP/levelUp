@@ -1,13 +1,13 @@
 package ru.levelup.lesson2;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class Application {
     public static void main(String[] args) {
 
         System.out.println("-------task1---------");
-        ArrayList<Employee> employees = Employee.fullEmployeeList(24, 30);
+        List<Employee> employees = Employee.fullEmployeeList(24, 30);
         System.out.println("fullEmployeeList: ");
         System.out.println(employees);
         int workAge = 25;
