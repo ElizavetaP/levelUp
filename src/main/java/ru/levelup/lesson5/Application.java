@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import ru.levelup.lesson5.enums.Units;
+import ru.levelup.lesson5.impl.ConverterImpl;
 
 @SpringBootApplication
 public class Application {
@@ -11,7 +12,7 @@ public class Application {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
         Temperature temperature = new Temperature(45d, Units.CELSIUS);
         System.out.println("Температура в Фаренгейтах: " +
-                context.getBean(Converter.class).convert(temperature, Units.FAHRENHEIT));
+                context.getBean(ConverterImpl.class).convert(temperature, Units.FAHRENHEIT));
 
     }
 }
