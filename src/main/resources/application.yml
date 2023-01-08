@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: levelup
+  datasource:
+    url: jdbc:mysql://localhost:3306/db
+    username: user
+    password: password
+    driverClassName: com.mysql.cj.jdbc.Driver
+
+levelup:
+  isSaveFibonacci: true
