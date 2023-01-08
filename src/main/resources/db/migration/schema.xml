@@ -1,0 +1,50 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Volkova Elizaveta" id="Create-table-region">
+        <preConditions>
+            <not>
+                <tableExists tableName="REGION"/>
+            </not>
+        </preConditions>
+        <createTable tableName="REGION">
+            <column name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Volkova Elizaveta" id="Create-table-city">
+<!--        <dropTable tableName="CITY"></dropTable>-->
+        <preConditions>
+            <not>
+                <tableExists tableName="CITY"/>
+            </not>
+        </preConditions>
+        <createTable tableName="CITY">
+            <column name="ID" type="INT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME_RU" type="VARCHAR(255)">
+                <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="NAME_EN" type="VARCHAR(255)">
+                <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="POPULATION" type="INT">
+                <constraints nullable="true" unique="false"/>
+            </column>
+            <column name="REGION" type="INT">
+                <constraints nullable="true" foreignKeyName="FK_CITY_REGION"
+                             references="REGION(ID)"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
