@@ -7,5 +7,23 @@ spring:
     password: password
     driverClassName: com.mysql.cj.jdbc.Driver
 
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: db
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  liquibase:
+    change-log: 'classpath:db/migration/changeLog.xml'
+    enabled: true
+  messages:
+    basename: messages # i18n.messages
+
 levelup:
   isSaveFibonacci: true
