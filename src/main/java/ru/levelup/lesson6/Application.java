@@ -14,8 +14,11 @@ public class Application {
         Scanner in = new Scanner(System.in);
         System.out.print("Input a number: ");
         int num = in.nextInt();
+
+        FibonacciGenerator fg = context.getBean(FibonacciGenerator.class);
+
         while (num > 0) {
-            System.out.println("Фибоначчи: " + context.getBean(FibonacciGenerator.class).nextAmount(num));
+            System.out.println("Фибоначчи: " + fg.nextAmount(num));
             System.out.println("Input a number: ");
             num = in.nextInt();
         }

@@ -11,16 +11,16 @@ import org.springframework.stereotype.Component;
 public class FibonacciGenerator {
 
     @Autowired(required = false)
-    StorageFibonacci storageFibonacci;
+    StorageFibonacciImpl storageFibonacci;
 
     @Value("${levelup.isSaveFibonacci}")
     private boolean isSaveFibonacci;
 
     public Long nextAmount(Integer number) {
         if (isSaveFibonacci) {
-            if (storageFibonacci.fibonacciMap.containsKey(number)) {
-                log.info(String.format("взято %d-е число Фибоначчи", number));
-                return storageFibonacci.fibonacciMap.get(number);
+            Long fibonacci = storageFibonacci.getFibonacci(number);
+            if (fibonacci > 0) {
+                return fibonacci;
             }
         }
 
@@ -34,10 +34,7 @@ public class FibonacciGenerator {
             amount = nextAmount(number - 2) + nextAmount(number - 1);
         }
         if (isSaveFibonacci) {
-            if (!storageFibonacci.fibonacciMap.containsKey(number)){
-                log.info(String.format("сохранено %d-е число Фибоначчи", number));
-                storageFibonacci.fibonacciMap.put(number, amount);
-            }
+            storageFibonacci.putFibonacci(number, amount);
         }
         return amount;
     }
