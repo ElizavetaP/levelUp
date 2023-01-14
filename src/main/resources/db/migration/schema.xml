@@ -21,7 +21,6 @@
     </changeSet>
 
     <changeSet author="Volkova Elizaveta" id="Create-table-city">
-<!--        <dropTable tableName="CITY"></dropTable>-->
         <preConditions>
             <not>
                 <tableExists tableName="CITY"/>

@@ -12,7 +12,6 @@ public interface CityRepository extends JpaRepository<City, Integer> {
     List<City> findByNameRu(String nameRu);
 
     @Query("select city from City city " +
-         //   "left join fetch city.region " +
             "where city.nameRu = :nameRu " +
             "and city.population >= :population")
     List<City> findByNameRuAndPopulation(@Param("nameRu") String nameRu,

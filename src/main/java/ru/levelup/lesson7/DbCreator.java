@@ -1,6 +1,6 @@
 package ru.levelup.lesson7;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -11,10 +11,10 @@ import java.sql.Statement;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class DbCreator {
 
-    @Autowired
-    DataSource ds;
+    final DataSource ds;
 
     @PostConstruct
     void createDb() {

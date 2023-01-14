@@ -26,7 +26,7 @@ public class City {
     @Column(name = "population")
     private Integer population;
 
-    @ManyToOne()
+    @ManyToOne
     @JoinColumn(name = "region")
     private Region region;
 

@@ -20,7 +20,7 @@
         <sqlFile relativeToChangelogFile="true" path="city-region.sql"/>
     </changeSet>
 
-    <changeSet author="Vitalii Ivanov" id="Populate-table-region">
+    <changeSet author="Volkova Elizaveta" id="Populate-table-region">
         <preConditions>
             <sqlCheck expectedResult="0"><![CDATA[
                 select count(*)
