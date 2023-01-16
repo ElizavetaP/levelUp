@@ -11,7 +11,7 @@
             </not>
         </preConditions>
         <createTable tableName="REGION">
-            <column name="ID" type="INT">
+            <column name="ID" type="INT" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="NAME" type="VARCHAR(255)">

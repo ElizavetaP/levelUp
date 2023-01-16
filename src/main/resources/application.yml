@@ -25,5 +25,9 @@ spring:
   messages:
     basename: messages # i18n.messages
 
+server:
+  port: 8081
+  servlet:
+    context-path: /levelup
 levelup:
   isSaveFibonacci: true
