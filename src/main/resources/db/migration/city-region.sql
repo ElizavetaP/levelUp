@@ -1,3 +1,3 @@
-insert into REGION(id, name) values (0, 'Северо-Западный');
+insert into REGION(name) values ('Северо-Западный');
 
-insert into CITY values (81555, 'Апатиты', 'Apatity', 60000, 0);
+insert into CITY (id, NAME_RU, NAME_EN, POPULATION, REGION) values (81555, 'Апатиты', 'Apatity', 60000, LAST_INSERT_ID());
